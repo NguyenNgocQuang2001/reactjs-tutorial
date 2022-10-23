@@ -5,6 +5,7 @@ import CountTime from "./CountTime";
 import Timer from "./Timer";
 import ComponentMemo from "./ComponentMemo";
 import Calculator from "./Calculator";
+import Reducer from "./Reducer";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
   const [countTime, setCountTime] = useState(false)
   const [memo, setMemo] = useState(false)
   const [calculator, setCalculator] = useState(false)
+  const [reducer, setReducer] = useState(false)
 
   return (
     <div className="App">
@@ -78,6 +80,16 @@ function App() {
         >
           Calculator
         </button>
+		<button
+            onClick={() => setReducer(!reducer)}
+            style={{
+
+				marginLeft: 50,
+				marginTop: 20
+            }}
+        >
+          Reducer
+        </button>
         {
           	toggle && <Content 
 						styles={{
@@ -125,6 +137,15 @@ function App() {
         }
 		{
         	calculator && <Calculator
+						styles={{
+
+							marginLeft: 80,
+							marginTop: 40
+						}}
+                    />
+        }
+		{
+        	reducer && <Reducer
 						styles={{
 
 							marginLeft: 80,
